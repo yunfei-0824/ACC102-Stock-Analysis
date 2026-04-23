@@ -19,14 +19,16 @@ This project provides an interactive web application for analyzing historical st
 - `README.md`: Project documentation
 
 ## How to Run
-1. Unzip `sp500_stocks.zip` to get `sp500_stocks.csv`
-2. Install dependencies:
+The application automatically handles the data file. No manual extraction is needed.
+
+1. Install dependencies:
    ```bash
    pip install -r requirements.txt
-3. Launch the interactive application:
+2. Launch the interactive application
    ```bash
    streamlit run app.py
-   ```
+   
+- Note: If the CSV file is missing, the app will automatically extract it from the included ZIP archive on first run.
 
 ## Data Description
 Historical stock data including Date, Symbol, Open, High, Low, Close, Adj Close, Volume.
