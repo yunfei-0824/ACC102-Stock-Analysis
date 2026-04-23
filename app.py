@@ -28,18 +28,13 @@ df = load_data()
 min_date = df["Date"].min()
 max_date = df["Date"].max()
 
-# ==============================
-# 👇 只在这里加了热门股票标记 + 默认NVDA
-# ==============================
 with st.sidebar:
     st.header("⚙️ Control Panel")
     symbols = sorted(df["Symbol"].unique())
 
-    # 方案三：热门股票加 ⭐
-    popular_symbols = ["NVDA", "AAPL", "MSFT", "AMZN", "GOOGL", "TSLA"]
+    popular_symbols = ["NVDA", "MSFT", "AMZN", "GOOGL", "TSLA"]
     symbol_options = [f"{s} ⭐" if s in popular_symbols else s for s in symbols]
 
-    # 方案一：默认选中 NVDA
     default_idx = symbol_options.index("NVDA ⭐")
     selected_with_star = st.selectbox("Choose Stock Symbol (⭐ = Full Data)", symbol_options, index=default_idx)
     selected = selected_with_star.replace(" ⭐", "")
