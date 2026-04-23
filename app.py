@@ -1,3 +1,13 @@
+import zipfile
+import os
+
+if not os.path.exists("sp500_stocks.csv"):
+    with zipfile.ZipFile("sp500_stocks.zip", "r") as zip_ref:
+        zip_ref.extractall(".")
+
+import pandas as pd
+df = pd.read_csv("sp500_stocks.csv")
+
 import streamlit as st
 import pandas as pd
 import numpy as np
